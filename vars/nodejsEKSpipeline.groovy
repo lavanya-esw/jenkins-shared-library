@@ -36,7 +36,7 @@ def call (Map configMap){
             stage('Dependabot security scan'){
                 environment {
                     GITHUB_OWNER = 'lavanya-esw'
-                    GITHUB_REPO  = 'catalogue-cicd'
+                    GITHUB_REPO  = '${COMPONENT}-cicd'
                     GITHUB_API   = 'https://api.github.com'
                     GITHUB_TOKEN = credentials('GITHUB-TOKEN')
                 }

@@ -18,8 +18,7 @@ def call (Map configMap){
             stage('Read Version'){
                 steps{
                     script{
-                        def fileContent = readFile(file: 'version.txt').trim()
-                        appVersion = packageJSON.fileContent
+                        appVersion = readFile(file: 'version')
                         echo "app version:${appVersion}"
                     }
                 }
