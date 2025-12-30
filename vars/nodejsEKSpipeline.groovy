@@ -9,7 +9,7 @@ def call (Map configMap){
             appVersion = ""
             ACC_ID = "500532068743"
             PROJECT = configMap.get("project")
-            COMPONENT = configMap.get("catalogue")
+            COMPONENT = configMap.get("component")
         }
         options{
             ansiColor('xterm')
