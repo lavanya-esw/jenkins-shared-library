@@ -28,7 +28,7 @@ def call (Map configMap){
                 steps {
                     script{
                         sh """
-                            npm install
+                            mvn clean package 
                         """
                     }
                 }
