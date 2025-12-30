@@ -1,4 +1,4 @@
-def call(Map configMap){
+def call (Map configMap){
     pipeline{
         agent{
             node{
@@ -122,13 +122,17 @@ def call(Map configMap){
         }
         post{
             always{
+                echo 'I will always say Hello again!'
                 cleanWs()
             }
-            success{
-                echo "build is sucess"
+            success {
+                echo 'I will run if success'
             }
-            failure{
-                echo "build is failed"
+            failure {
+                echo 'I will run if failure'
+            }
+            aborted {
+                echo 'pipeline is aborted'
             }
         }
     }
