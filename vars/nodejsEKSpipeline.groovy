@@ -110,6 +110,19 @@ def call (Map configMap){
                     }
                 }
             }
+            stage('Trigger DEV deploy'){
+                steps{
+                    script{
+                        build job: "${COMPONENT}-deploy",
+                        wait: false,
+                        propagate: false
+                        parameters: [
+                            string(name: 'appVersion', value: "${appVersion}"),
+                            string(name: 'deploy_to', value: "dev")
+                        ]
+                    }
+                }
+            }
             stage('test'){
                 steps{
                     script{
