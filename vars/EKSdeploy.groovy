@@ -17,7 +17,7 @@ def call(Map configMap){
             stage('Deploy'){
                 steps{
                     script{
-                        withAWS(region:'us-east-1',credentials:'aws-creds') {
+                        withAWS(region:'us-east-1',credentials:'aws_access') {
                             sh """
                                 set -e
                                 aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${deploy_to}
